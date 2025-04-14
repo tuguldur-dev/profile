@@ -2,6 +2,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import * as Repack from '@callstack/repack';
 import rspack from '@rspack/core'
+import { withZephyr } from 'zephyr-repack-plugin'
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 import pkg from './package.json' with { type: 'json' };
@@ -12,7 +13,8 @@ import pkg from './package.json' with { type: 'json' };
  * Learn about Re.Pack configuration: https://re-pack.dev/docs/guides/configuration
  */
 
-export default {
+export default withZephyr()(env => {
+  return {
   context: __dirname,
   entry: './index.js',
   resolve: {
@@ -52,3 +54,4 @@ export default {
     }),
   ]
 };
+});
