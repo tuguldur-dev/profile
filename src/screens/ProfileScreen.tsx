@@ -74,7 +74,7 @@ const ProfileScreen: React.FC = () => {
           style={[styles.button, { backgroundColor: colors.primary }]}
           onPress={() => navigation.navigate('ChangePassword')}
         >
-          <Text style={styles.buttonText}>Change Password</Text>
+          <Text style={styles.buttonText}>Change Password12312312</Text>
         </TouchableOpacity>
 
         <TouchableOpacity
